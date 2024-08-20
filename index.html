@@ -14,15 +14,14 @@
   <h1>Speech to text</h1>
   <div class="selection">
     <p>Language:</p>
-    <select name="select">
-      <option>Value 1</option>
-      <option>Value 2</option>
-    </select>
+    <select name="select" id = "selection"></select>
   </div>
-  <textarea>
-
-    </textarea>
-  <button><i class="fa-solid fa-microphone"></i> Start recording</button>
+  <div class="separator"></div>
+  <textarea id="result"></textarea>
+  <button id="startBtn" class="start"><i class="fa-solid fa-microphone"></i> Start recording</button>
+  <button id="stopBtn" class="stop"><i class="fa-regular fa-circle"></i> Stop recording</button>
 </div>
+<script src="languages.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
