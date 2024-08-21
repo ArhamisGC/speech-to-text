@@ -19,4 +19,4 @@ This project is built using the following technologies:
 ## 🌐 Use it Online
 You can use it directly in your browser by visiting the following URL:
 
-(Speech to Text)[https://arhamisgc.github.io/speech-to-text/]
+[Speech to Text](https://arhamisgc.github.io/speech-to-text/)
