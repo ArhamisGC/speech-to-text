@@ -2,6 +2,7 @@ const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
 const selection = document.getElementById("selection");
 const result = document.getElementById("result");
+let recognizing = true;
 let text = "";
 
 let recognition = new webkitSpeechRecognition();
@@ -24,15 +25,25 @@ startBtn.addEventListener("click", () => {
   stopBtn.style.display = "flex";
   recognition.lang = selection.value;
   recognition.start();
+  recognizing = true;
   recognition.onresult = function (event) {
     text = event.results[event.results.length - 1][0].transcript;
     result.textContent = text;
   }
-})
+});
 
 stopBtn.addEventListener("click", ()=>{
   recognition.abort();
+  recognizing = false;
   stopBtn.style.display = "none";
   startBtn.style.display = "flex";
-})
+});
 
+recognition.onend = function() {
+  if (recognizing) {
+    recognition.start();
+  } else {
+    stopBtn.style.display = "none";
+    startBtn.style.display = "flex";
+  }
+};
